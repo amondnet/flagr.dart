@@ -1,0 +1,4 @@
+pubName: flagr
+pubVersion: 1.1.8
+pubDescription: Flagr API client. Flagr is a feature flagging, A/B testing and dynamic configuration microservice.
+dateLibrary: timemachine

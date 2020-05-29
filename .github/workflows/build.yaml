@@ -1,0 +1,41 @@
+name: flagr
+
+on: [push, pull_request]
+
+jobs:
+  build_dart_packages:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ["http"]
+        version: ["latest", "dev"]
+
+    container:
+      image: google/dart:${{ matrix.version }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          pub get
+          pub global activate test_coverage
+          pub global activate remove_from_coverage
+      #- name: Analyze
+      #  working-directory: package/${{ matrix.package }}
+      #  run: dartanalyzer --fatal-infos --fatal-warnings .
+
+      - name: Run tests
+        run: |
+          true || pub run build_runner build
+          pub run test
+          pub global run test_coverage --badge false
+          pub global run remove_from_coverage -f coverage/lcov.info -r '.freezed.dart$'
+      - name: Upload coverage to codecov
+        uses: codecov/codecov-action@v1
+        if: ${{ matrix.version == 'latest' }}
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: ${{ matrix.package }}
+          file: coverage/lcov.info

@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "key": "string",
+    "description": "string",
+    "enabled": true,
+    "segments": [
+      {
+        "id": 1,
+        "description": "string",
+        "constraints": [
+          {
+            "id": 1,
+            "property": "string",
+            "operator": "EQ",
+            "value": "string"
+          }
+        ],
+        "distributions": [
+          {
+            "id": 1,
+            "percent": 0,
+            "variantKey": "string",
+            "variantID": 1
+          }
+        ],
+        "rank": 0,
+        "rolloutPercent": 0
+      }
+    ],
+    "variants": [
+      {
+        "id": 1,
+        "key": "string",
+        "attachment": {}
+      }
+    ],
+    "dataRecordsEnabled": true,
+    "entityType": "string",
+    "notes": "string",
+    "createdBy": "string",
+    "updatedBy": "string",
+    "updatedAt": "2020-05-29T01:35:28Z"
+  }
+]
