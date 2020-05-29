@@ -1,0 +1,31 @@
+{
+  "evaluationResults": [
+    {
+      "flagID": 0,
+      "flagKey": "string",
+      "flagSnapshotID": 0,
+      "segmentID": 0,
+      "variantID": 0,
+      "variantKey": "string",
+      "variantAttachment": {},
+      "evalContext": {
+        "entityID": "string",
+        "entityType": "string",
+        "entityContext": {},
+        "enableDebug": true,
+        "flagID": 1,
+        "flagKey": "string"
+      },
+      "timestamp": "string",
+      "evalDebugLog": {
+        "segmentDebugLogs": [
+          {
+            "segmentID": 1,
+            "msg": "string"
+          }
+        ],
+        "msg": "string"
+      }
+    }
+  ]
+}
