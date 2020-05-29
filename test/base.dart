@@ -28,6 +28,6 @@ abstract class BaseTest {
     server.defaultResponse = defaultResponse;
     responses.forEach((response) => server.enqueueResponse(response));
     await server.start();
-    client ??= Flagr(basePathOverride: 'http://localhost:${server.port}');
+    client = Flagr(basePathOverride: 'http://${server.host}:${server.port}');
   }
 }
