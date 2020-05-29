@@ -31,7 +31,7 @@ jobs:
           true || pub run build_runner build
           pub run test
           pub global run test_coverage --badge false
-          pub global run remove_from_coverage -f coverage/lcov.info -r '.freezed.dart$'
+          pub global run remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v1
         if: ${{ matrix.version == 'latest' }}
