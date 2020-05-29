@@ -11,4 +11,4 @@ echo "VERSION : ${VERSION}"
 export GITHUB_RUN_NUMBER=1
 perl -i -pe 's/^(version:\s+)(\d+\.\d+\.\d+\+)(\d+)$/$1.$ENV{VERSION}."+".$ENV{GITHUB_RUN_NUMBER}/e' pubspec.yaml
 
-
+dartfmt -w lib
